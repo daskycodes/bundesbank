@@ -1,9 +1,12 @@
 # Bundesbank
 
+[![Hex.pm](https://img.shields.io/hexpm/v/bundesbank?style=flat-square)](https://hex.pm/packages/bundesbank) [![Hex Docs](https://img.shields.io/badge/hex-docs-9768d1.svg)](https://hexdocs.pm/bundesbank)
+
 A collection of German Bank Data including BIC, Bankcodes, PAN and more useful information based on the [Bundesbank Data Set](https://www.bundesbank.de/de/aufgaben/unbarer-zahlungsverkehr/serviceangebot/bankleitzahlen/download-bankleitzahlen-602592)
 
 **Current Data Set is Valid until June, 06th 2020**
 
+https://img.shields.io/hexpm/v/bundesbank?style=flat-square
 
 ## Installation
 

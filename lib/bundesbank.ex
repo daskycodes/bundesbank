@@ -8,7 +8,9 @@ defmodule Bundesbank do
 
   @doc """
   Filters banks by given attribute.
+
   Returns a list of `Bundesbank.Bank` structs
+  
   ## Examples
     iex> Bundesbank.filter_by(:bic, 'GENODED1KDB')
     [%Bundesbank.Bank{bank_name: 'KD-Bank Berlin', bic: 'GENODED1KDB', change_code: 'U' ...
@@ -25,7 +27,9 @@ defmodule Bundesbank do
 
   @doc """
   Checks if a bank for specific attribute and value exists.
+
   Returns boolean
+
   ## Examples
     iex> Bundesbank.exists?(:city, 'New York')
     false
