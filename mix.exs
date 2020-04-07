@@ -7,6 +7,10 @@ defmodule Bundesbank.MixProject do
       version: "0.1.0",
       elixir: "~> 1.10",
       start_permanent: Mix.env() == :prod,
+      description: description(),
+      package: package(),
+      name: "Bundesbank",
+      source_url: "https://github.com/daskycodes/bundesbank",
       deps: deps()
     ]
   end
@@ -32,7 +36,7 @@ defmodule Bundesbank.MixProject do
     """
   end
 
-  defp package do
+  defp package() do
     [
       maintainers: ["Daniel Khaapamyaki"],
       licenses: ["MIT"],
