@@ -4,8 +4,8 @@ defmodule Bundesbank.Loader do
     alias Bundesbank.Bank
 
     # load all banks from data.xlsx and transform to a collection of structs:
-    # [%Bundesbank.Bank{bank_name: 'Deutsche Bank Fil Berlin', bic: 'DEUTDEBBXXX', change_code: 'U', ...},
-    #   %Bundesbank.Bank{bank_name: 'DB PFK (Deutsche Bank PGK)', bic: 'DEUTDEDBBER', ...
+    # [%Bundesbank.Bank{bank_name: "Deutsche Bank Fil Berlin", bic: "DEUTDEBBXXX", change_code: "U", ...},
+    #   %Bundesbank.Bank{bank_name: "DB PFK (Deutsche Bank PGK)", bic: "DEUTDEDBBER", ...
 
     def load do
         keywords = [:code,:property,:description,:postal_code,:city,:bank_name,:pan,:bic,:mark_of_conformity,:record_number,:change_code,:delete_code,:emulation_code]

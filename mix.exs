@@ -25,7 +25,6 @@ defmodule Bundesbank.MixProject do
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:yamerl, "~> 0.7"},
       {:ex_doc, "~> 0.19", only: :dev, runtime: false},
       {:floki, "~> 0.25.0"},
       {:httpoison, "~> 1.4"},
