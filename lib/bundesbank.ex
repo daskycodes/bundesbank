@@ -12,12 +12,14 @@ defmodule Bundesbank do
   Returns a list of `Bundesbank.Bank` structs
   
   ## Examples
-    iex> Bundesbank.filter_by(:bic, 'GENODED1KDB')
-    [%Bundesbank.Bank{bank_name: 'KD-Bank Berlin', bic: 'GENODED1KDB', change_code: 'U' ...
-    iex> Bundesbank.filter_by(:city, 'Berlin')
-    [%Bundesbank.Bank{bank_name: 'BBk Berlin', bic: 'MARKDEF1100', change_code: 'U', ...
-    iex> Bundesbank.filter_by(:code, 20050000)
-    [%Bundesbank.Bank{bank_name: 'Hamburg Commercial Bank', bic: 'HSHNDEHHXXX', change_code: 'U', ...
+   ```
+    iex> Bundesbank.filter_by(:bic, "GENODED1KDB")
+    [%Bundesbank.Bank{bank_name: "KD-Bank Berlin", bic: "GENODED1KDB", change_code: "U" ...
+    iex> Bundesbank.filter_by(:city, "Berlin")
+    [%Bundesbank.Bank{bank_name: "BBk Berlin", bic: "MARKDEF1100", change_code: "U", ...
+    iex> Bundesbank.filter_by(:code, "20050000")
+    [%Bundesbank.Bank{bank_name: "Hamburg Commercial Bank", bic: "HSHNDEHHXXX", change_code: "U", ...
+  ```
   """
   def filter_by(attribute, value) do
     Enum.filter(bundesbank(), fn bank ->
@@ -31,18 +33,20 @@ defmodule Bundesbank do
   Returns boolean
 
   ## Examples
-    iex> Bundesbank.exists?(:city, 'New York')
+  ```
+    iex> Bundesbank.exists?(:city, "New York")
     false
-    iex> Bundesbank.exists?(:name, 'Berlin')
+    iex> Bundesbank.exists?(:name, "Berlin")
     true
+  ```
   """
   def exists?(attribue, value) do
     filter_by(attribue, value) |> length > 0
   end
 
-  # Load banks from yml file once on compile time
+  # Load banks from xlsx file once on compile time
 
-  Application.start(:yamerl)
+  Application.start(:excelion)
 
   @bundesbank Bundesbank.Loader.load()
 

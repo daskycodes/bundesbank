@@ -4,7 +4,7 @@ defmodule Bundesbank.MixProject do
   def project do
     [
       app: :bundesbank,
-      version: "0.1.1",
+      version: "0.1.2",
       elixir: "~> 1.3",
       start_permanent: Mix.env() == :prod,
       description: description(),
@@ -18,7 +18,7 @@ defmodule Bundesbank.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      extra_applications: [:logger, :yamerl]
+      extra_applications: [:logger, :excelion],
     ]
   end
 
@@ -27,6 +27,9 @@ defmodule Bundesbank.MixProject do
     [
       {:yamerl, "~> 0.7"},
       {:ex_doc, "~> 0.19", only: :dev, runtime: false},
+      {:floki, "~> 0.25.0"},
+      {:httpoison, "~> 1.4"},
+      {:excelion, "~> 0.0.5"}
     ]
   end
 

@@ -28,25 +28,29 @@ Get all banks from the collection
 ```elixir
 banks = Bundesbank.all
 Enum.count(banks)
-# 14511
+# 16028
 ```
 
 Filter banks by a given attribute. (:bic, :code, :postal_code, :city ...)
-Don't forget to fill short BICS with 'X' ('PBNKDEFF' > 'PBNKDEFFXXX')
+Don't forget to fill short BICS with "X" ("PBNKDEFF" > "PBNKDEFFXXX")
 
 ```elixir
-bank = Bundesbank.filter_by(:code, 20050000)
-# [%Bundesbank.Bank{bank_name: 'Hamburg Commercial Bank', bic: 'HSHNDEHHXXX', change_code: 'U', ...
-banks = Bundesbank.filter_by(:city, 'Berlin')
-# [%Bundesbank.Bank{bank_name: 'BBk Berlin', bic: 'MARKDEF1100', change_code: 'U', ...
+bank = Bundesbank.filter_by(:code, "20050000")
+# [%Bundesbank.Bank{bank_name: "Hamburg Commercial Bank", bic: "HSHNDEHHXXX", change_code: "U", ...
+banks = Bundesbank.filter_by(:city, "Berlin")
+# [%Bundesbank.Bank{bank_name: "BBk Berlin", bic: "MARKDEF1100", change_code: "U", ...
 Enum.count(banks)
 # 95
 ```
+
+run `mix update_bundesbank`
+
+to fetch the latest data set from www.bundesbank.de
 
 ## Contributing
 
 1. Fork it
 2. Create your feature branch (git checkout -b my-new-feature)
-3. Commit your changes (git commit -am 'Add some feature')
+3. Commit your changes (git commit -am "Add some feature")
 4. Push to the branch (git push origin my-new-feature)
 5. Create new Pull Request
