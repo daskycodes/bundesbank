@@ -4,8 +4,8 @@ defmodule Bundesbank.MixProject do
   def project do
     [
       app: :bundesbank,
-      version: "0.1.2",
-      elixir: "~> 1.3",
+      version: "0.1.3",
+      elixir: "~> 1.7",
       start_permanent: Mix.env() == :prod,
       description: description(),
       package: package(),
@@ -18,17 +18,15 @@ defmodule Bundesbank.MixProject do
   # Run "mix help compile.app" to learn about applications.
   def application do
     [
-      extra_applications: [:logger, :excelion],
+      extra_applications: [:logger]
     ]
   end
 
   # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
-      {:ex_doc, "~> 0.19", only: :dev, runtime: false},
-      {:floki, "~> 0.25.0"},
-      {:httpoison, "~> 1.4"},
-      {:excelion, "~> 0.0.5"}
+      {:ex_doc, "~> 0.22", only: :dev, runtime: false},
+      {:nimble_csv, "~> 0.7"}
     ]
   end
 

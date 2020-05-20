@@ -8,12 +8,12 @@ defmodule BundesbankTest do
 
   test "filter banks by city" do
     banks = Bundesbank.filter_by(:city, "Berlin")
-    assert Enum.count(banks) == 95
+    assert Enum.count(banks) == 96
   end
 
   test "get all countries" do
     banks = Bundesbank.all()
-    assert Enum.count(banks) == 16028
+    assert Enum.count(banks) == 15947
   end
 
   test "checks if banks exist" do

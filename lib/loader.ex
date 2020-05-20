@@ -2,6 +2,7 @@ defmodule Bundesbank.Loader do
     @moduledoc false
 
     alias Bundesbank.Bank
+    NimbleCSV.define(MyParser, separator: ",", escape: "\"")
 
     # load all banks from data.xlsx and transform to a collection of structs:
     # [%Bundesbank.Bank{bank_name: "Deutsche Bank Fil Berlin", bic: "DEUTDEBBXXX", change_code: "U", ...},
@@ -9,8 +10,9 @@ defmodule Bundesbank.Loader do
 
     def load do
         keywords = [:code,:property,:description,:postal_code,:city,:bank_name,:pan,:bic,:mark_of_conformity,:record_number,:change_code,:delete_code,:emulation_code]
-        data_path(["data.xlsx"])
-        |> Excelion.parse!(0, 2)
+        data_path(["data.csv"])
+        |> File.stream!
+        |> MyParser.parse_stream
         |> Enum.map(fn bank -> Enum.zip(keywords, bank) end)
         |> Enum.map(fn bank -> Enum.into(bank, %{}) end)
         |> Enum.map(fn bank -> struct(Bank, bank) end)
