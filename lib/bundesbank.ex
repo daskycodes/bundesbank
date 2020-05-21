@@ -44,9 +44,7 @@ defmodule Bundesbank do
     filter_by(attribue, value) |> length > 0
   end
 
-  # Load banks from xlsx file once on compile time
-
-  Application.start(:excelion)
+  # Load banks from csv file once on compile time
 
   @bundesbank Bundesbank.Loader.load()
 
