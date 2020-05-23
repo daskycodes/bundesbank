@@ -31,7 +31,25 @@ Enum.count(banks)
 # 15947
 ```
 
-Filter banks by a given attribute. (:bic, :code, :postal_code, :city ...)
+Filter banks by a given attribute.
+
+```elixir
+[
+  :code,
+  :property,
+  :description,
+  :postal_code,
+  :city,
+  :bank_name,
+  :pan,
+  :bic,
+  :mark_of_conformity,
+  :record_number,
+  :change_code,
+  :delete_code,
+  :emulation_code
+]
+```
 Don't forget to fill short BICS with "X" ("PBNKDEFF" > "PBNKDEFFXXX")
 
 ```elixir

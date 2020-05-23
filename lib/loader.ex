@@ -4,7 +4,7 @@ defmodule Bundesbank.Loader do
     alias Bundesbank.Bank
     NimbleCSV.define(MyParser, separator: ",", escape: "\"")
 
-    # load all banks from data.xlsx and transform to a collection of structs:
+    # load all banks from data.csv and transform to a collection of structs:
     # [%Bundesbank.Bank{bank_name: "Deutsche Bank Fil Berlin", bic: "DEUTDEBBXXX", change_code: "U", ...},
     #   %Bundesbank.Bank{bank_name: "DB PFK (Deutsche Bank PGK)", bic: "DEUTDEDBBER", ...
 

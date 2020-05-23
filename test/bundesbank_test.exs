@@ -11,7 +11,7 @@ defmodule BundesbankTest do
     assert Enum.count(banks) == 96
   end
 
-  test "get all countries" do
+  test "get all banks" do
     banks = Bundesbank.all()
     assert Enum.count(banks) == 15947
   end
