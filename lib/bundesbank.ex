@@ -10,7 +10,7 @@ defmodule Bundesbank do
   Filters banks by given attribute.
 
   Returns a list of `Bundesbank.Bank` structs
-  
+
   ## Examples
    ```
     iex> Bundesbank.filter_by(:bic, "GENODED1KDB")
