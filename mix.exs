@@ -1,17 +1,20 @@
 defmodule Bundesbank.MixProject do
   use Mix.Project
 
+  @version "0.1.3"
+
   def project do
     [
       app: :bundesbank,
-      version: "0.1.3",
+      version: @version,
       elixir: "~> 1.7",
       start_permanent: Mix.env() == :prod,
       description: description(),
       package: package(),
       name: "Bundesbank",
       source_url: "https://github.com/daskycodes/bundesbank",
-      deps: deps()
+      deps: deps(),
+      docs: docs(),
     ]
   end
 
@@ -34,6 +37,14 @@ defmodule Bundesbank.MixProject do
     """
     A collection of German Bank Data including BIC, Bankcodes, PAN and more useful information based on the Bundesbank Data Set
     """
+  end
+
+  defp docs do
+    [
+      main: "Bundesbank",
+      source_ref: "v#{@version}",
+      source_url: "https://github.com/daskycodes/bundesbank"
+    ]
   end
 
   defp package() do

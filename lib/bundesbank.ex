@@ -1,4 +1,10 @@
 defmodule Bundesbank do
+    @moduledoc ~S"""
+    A collection of German Bank Data including BIC, Bankcodes, PAN and more useful information based on the [Bundesbank Data Set](https://www.bundesbank.de/de/aufgaben/unbarer-zahlungsverkehr/serviceangebot/bankleitzahlen/download-bankleitzahlen-602592)
+
+    **Current Data Set is Valid until September, 06th 2020**
+  """
+
   @doc """
   Returns all banks.
   """
@@ -10,6 +16,11 @@ defmodule Bundesbank do
   Filters banks by given attribute.
 
   Returns a list of `Bundesbank.Bank` structs
+
+  Possible attributes:
+  ```
+  [:code, :property, :description, :postal_code, :city, :bank_name, :pan, :bic, :mark_of_conformity, :record_number, :change_code, :delete_code, :emulation_code]
+  ```
 
   ## Examples
    ```
@@ -36,7 +47,7 @@ defmodule Bundesbank do
   ```
     iex> Bundesbank.exists?(:city, "New York")
     false
-    iex> Bundesbank.exists?(:name, "Berlin")
+    iex> Bundesbank.exists?(:city, "Berlin")
     true
   ```
   """
