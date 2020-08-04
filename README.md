@@ -50,7 +50,6 @@ Filter banks by a given attribute.
   :emulation_code
 ]
 ```
-Don't forget to fill short BICS with "X" ("PBNKDEFF" > "PBNKDEFFXXX")
 
 ```elixir
 bank = Bundesbank.filter_by(:code, "20050000")

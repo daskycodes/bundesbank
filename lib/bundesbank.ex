@@ -13,11 +13,11 @@ defmodule Bundesbank do
   end
 
   @doc """
-  Filters banks by given attribute.
+  Filters banks by given key.
 
   Returns a list of `Bundesbank.Bank` structs
 
-  Possible attributes:
+  Possible keys:
   ```
   [:code, :property, :description, :postal_code, :city, :bank_name, :pan, :bic, :mark_of_conformity, :record_number, :change_code, :delete_code, :emulation_code]
   ```
@@ -32,11 +32,26 @@ defmodule Bundesbank do
     [%Bundesbank.Bank{bank_name: "Hamburg Commercial Bank", bic: "HSHNDEHHXXX", change_code: "U", ...
   ```
   """
-  def filter_by(attribute, value) do
+  def filter_by(key, value) do
     Enum.filter(bundesbank(), fn bank ->
-      Map.get(bank, attribute) == value
+      Map.get(bank, key)
+      |> normalize(value, key)
     end)
   end
+
+  defp normalize(attribute, value, key),
+    do: normalize(attribute, key) == normalize(value, key)
+
+  defp normalize(value, key) when is_integer(value),
+    do: value |> Integer.to_string() |> normalize(key)
+
+  defp normalize(value, key) when is_binary(value) and key != :bic,
+    do: value |> String.downcase() |> String.replace(~r/\s+/, "") |> String.pad_trailing(11, "x")
+
+  defp normalize(value, key) when is_binary(value) and key == :bic,
+    do: value |> String.downcase() |> String.replace(~r/\s+/, "") |> String.pad_trailing(11, "x")
+
+  defp normalize(value, _), do: value
 
   @doc """
   Checks if a bank for specific attribute and value exists.
