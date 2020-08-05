@@ -54,7 +54,7 @@ defmodule Bundesbank do
   defp normalize(value, _), do: value
 
   @doc """
-  Checks if a bank for specific attribute and value exists.
+  Checks if a bank for specific key and value exists.
 
   Returns boolean
 
@@ -66,8 +66,8 @@ defmodule Bundesbank do
     true
   ```
   """
-  def exists?(attribue, value) do
-    filter_by(attribue, value) |> length > 0
+  def exists?(key, value) do
+    filter_by(key, value) |> length > 0
   end
 
   # Load banks from csv file once on compile time
