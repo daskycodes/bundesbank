@@ -23,14 +23,12 @@ defmodule Bundesbank do
   ```
 
   ## Examples
-   ```
-    iex> Bundesbank.filter_by(:bic, "GENODED1KDB")
-    [%Bundesbank.Bank{bank_name: "KD-Bank Berlin", bic: "GENODED1KDB", change_code: "U" ...
-    iex> Bundesbank.filter_by(:city, "Berlin")
-    [%Bundesbank.Bank{bank_name: "BBk Berlin", bic: "MARKDEF1100", change_code: "U", ...
-    iex> Bundesbank.filter_by(:code, "20050000")
-    [%Bundesbank.Bank{bank_name: "Hamburg Commercial Bank", bic: "HSHNDEHHXXX", change_code: "U", ...
-  ```
+      iex> Bundesbank.filter_by(:bic, "GENODED1KDB")
+      [%Bundesbank.Bank{bank_name: "KD-Bank Berlin", bic: "GENODED1KDB", change_code: "U", city: "Berlin", code: "10061006", delete_code: "0",  description: "Bank für Kirche und Diakonie - KD-Bank Gf Sonder-BLZ", emulation_code: "00000000", mark_of_conformity: "09", pan: "", postal_code: "10117", property: "1", record_number: "055270" }]
+      iex> Bundesbank.filter_by(:code, "20050000")
+      [%Bundesbank.Bank{bank_name: "Hamburg Commercial Bank", bic: "HSHNDEHHXXX", change_code: "U", city: "Hamburg", code: "20050000", delete_code: "0", description: "Hamburg Commercial Bank, ehemals HSH Nordbank Hamburg", emulation_code: "00000000", mark_of_conformity: "C5", pan: "52000", postal_code: "20095", property: "1", record_number: "011954"}]
+      iex> Bundesbank.filter_by(:city, "Berlin") |> Enum.count()
+      96
   """
   def filter_by(key, value) do
     Enum.filter(bundesbank(), fn bank ->
@@ -59,12 +57,10 @@ defmodule Bundesbank do
   Returns boolean
 
   ## Examples
-  ```
-    iex> Bundesbank.exists?(:city, "New York")
-    false
-    iex> Bundesbank.exists?(:city, "Berlin")
-    true
-  ```
+      iex> Bundesbank.exists?(:city, "New York")
+      false
+      iex> Bundesbank.exists?(:city, "Berlin")
+      true
   """
   def exists?(key, value) do
     filter_by(key, value) |> length > 0
