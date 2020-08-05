@@ -14,7 +14,7 @@ by adding `bundesbank` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:bundesbank, "~> 0.1.4"}
+    {:bundesbank, "~> 0.2.0"}
   ]
 end
 ```

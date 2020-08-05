@@ -1,7 +1,7 @@
 defmodule Bundesbank.MixProject do
   use Mix.Project
 
-  @version "0.1.4"
+  @version "0.2.0"
 
   def project do
     [
@@ -43,7 +43,8 @@ defmodule Bundesbank.MixProject do
     [
       main: "Bundesbank",
       source_ref: "v#{@version}",
-      source_url: "https://github.com/daskycodes/bundesbank"
+      source_url: "https://github.com/daskycodes/bundesbank",
+      extras: ["README.md"]
     ]
   end
 
