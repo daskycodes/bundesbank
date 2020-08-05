@@ -14,7 +14,7 @@ by adding `bundesbank` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:bundesbank, "~> 0.1.3"}
+    {:bundesbank, "~> 0.1.4"}
   ]
 end
 ```
@@ -31,7 +31,7 @@ Enum.count(banks)
 # 15947
 ```
 
-Filter banks by a given attribute.
+Filter banks by a given key.
 
 ```elixir
 [
