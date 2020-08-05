@@ -1,8 +1,8 @@
 defmodule Bundesbank do
-    @moduledoc ~S"""
-    A collection of German Bank Data including BIC, Bankcodes, PAN and more useful information based on the [Bundesbank Data Set](https://www.bundesbank.de/de/aufgaben/unbarer-zahlungsverkehr/serviceangebot/bankleitzahlen/download-bankleitzahlen-602592)
+  @moduledoc ~S"""
+  A collection of German Bank Data including BIC, Bankcodes, PAN and more useful information based on the [Bundesbank Data Set](https://www.bundesbank.de/de/aufgaben/unbarer-zahlungsverkehr/serviceangebot/bankleitzahlen/download-bankleitzahlen-602592)
 
-    **Current Data Set is Valid until September, 06th 2020**
+  **Current Data Set is Valid until September, 06th 2020**
   """
 
   @doc """
@@ -10,6 +10,19 @@ defmodule Bundesbank do
   """
   def all do
     bundesbank()
+  end
+
+  @doc """
+  Returns one bank given its code
+  ## Examples
+      iex> %Bundesbank.Bank{bank_name: bank_name} = Bundesbank.get(50010060)
+      iex> bank_name
+      "Postbank Ndl DB PFK"
+  """
+
+  def get(code) do
+    [bank] = filter_by(:code, code)
+    bank
   end
 
   @doc """

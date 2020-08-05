@@ -9,6 +9,12 @@ defmodule BundesbankTest do
     end
   end
 
+  describe "get/1" do
+    test "gets one bank" do
+      %{code: "50010060"} = Bundesbank.get(50010060)
+    end
+  end
+
   describe "exists?/2" do
     test "checks if bank exists" do
       refute Bundesbank.exists?(:city, "New York")

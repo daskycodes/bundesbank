@@ -14,7 +14,7 @@ defmodule Bundesbank.MixProject do
       name: "Bundesbank",
       source_url: "https://github.com/daskycodes/bundesbank",
       deps: deps(),
-      docs: docs(),
+      docs: docs()
     ]
   end
 
