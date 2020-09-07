@@ -57,7 +57,7 @@ bank = Bundesbank.filter_by(:code, "20050000")
 banks = Bundesbank.filter_by(:city, "Berlin")
 # [%Bundesbank.Bank{bank_name: "BBk Berlin", bic: "MARKDEF1100", change_code: "U", ...
 Enum.count(banks)
-# 96
+# 94
 ```
 
 ## Contributing

@@ -17,7 +17,7 @@ defmodule Bundesbank do
   ## Examples
       iex> %Bundesbank.Bank{bank_name: bank_name} = Bundesbank.get(50010060)
       iex> bank_name
-      "Postbank Ndl DB PFK"
+      "Postbank Ndl Deutsche Bank"
   """
 
   def get(code) do
@@ -41,7 +41,7 @@ defmodule Bundesbank do
       iex> Bundesbank.filter_by(:code, "20050000")
       [%Bundesbank.Bank{bank_name: "Hamburg Commercial Bank", bic: "HSHNDEHHXXX", change_code: "U", city: "Hamburg", code: "20050000", delete_code: "0", description: "Hamburg Commercial Bank, ehemals HSH Nordbank Hamburg", emulation_code: "00000000", mark_of_conformity: "C5", pan: "52000", postal_code: "20095", property: "1", record_number: "011954"}]
       iex> Bundesbank.filter_by(:city, "Berlin") |> Enum.count()
-      96
+      94
   """
   def filter_by(key, value) do
     Enum.filter(bundesbank(), fn bank ->
