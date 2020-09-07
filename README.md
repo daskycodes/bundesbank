@@ -4,7 +4,7 @@
 
 A collection of German Bank Data including BIC, Bankcodes, PAN and more useful information based on the [Bundesbank Data Set](https://www.bundesbank.de/de/aufgaben/unbarer-zahlungsverkehr/serviceangebot/bankleitzahlen/download-bankleitzahlen-602592)
 
-**Current Data Set is Valid until September, 06th 2020**
+**Current Data Set is Valid until December, 12th 2020**
 
 ## Installation
 
@@ -14,7 +14,7 @@ by adding `bundesbank` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:bundesbank, "~> 0.2.0"}
+    {:bundesbank, "~> 0.2.1"}
   ]
 end
 ```
