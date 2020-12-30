@@ -29,7 +29,7 @@ defmodule Bundesbank.MixProject do
   defp deps do
     [
       {:ex_doc, "~> 0.22", only: :dev, runtime: false},
-      {:nimble_csv, "~> 0.7"}
+      {:nimble_csv, "~> 1.0"}
     ]
   end
 
