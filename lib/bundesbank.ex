@@ -2,7 +2,7 @@ defmodule Bundesbank do
   @moduledoc ~S"""
   A collection of German Bank Data including BIC, Bankcodes, PAN and more useful information based on the [Bundesbank Data Set](https://www.bundesbank.de/de/aufgaben/unbarer-zahlungsverkehr/serviceangebot/bankleitzahlen/download-bankleitzahlen-602592)
 
-  **Current Data Set is Valid until September, 06th 2020**
+  **Current Data Set is Valid until March, 3rd 2021**
   """
 
   @doc """
@@ -41,7 +41,7 @@ defmodule Bundesbank do
       iex> Bundesbank.filter_by(:code, "20050000")
       [%Bundesbank.Bank{bank_name: "Hamburg Commercial Bank", bic: "HSHNDEHHXXX", change_code: "U", city: "Hamburg", code: "20050000", delete_code: "0", description: "Hamburg Commercial Bank, ehemals HSH Nordbank Hamburg", emulation_code: "00000000", mark_of_conformity: "C5", pan: "52000", postal_code: "20095", property: "1", record_number: "011954"}]
       iex> Bundesbank.filter_by(:city, "Berlin") |> Enum.count()
-      94
+      101
   """
   def filter_by(key, value) do
     Enum.filter(bundesbank(), fn bank ->
