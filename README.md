@@ -4,7 +4,7 @@
 
 A collection of German Bank Data including BIC, Bankcodes, PAN and more useful information based on the [Bundesbank Data Set](https://www.bundesbank.de/de/aufgaben/unbarer-zahlungsverkehr/serviceangebot/bankleitzahlen/download-bankleitzahlen-602592)
 
-**Current Data Set is Valid until December, 12th 2020**
+**Current Data Set is Valid until March, 3rd 2021**
 
 ## Installation
 
@@ -14,7 +14,7 @@ by adding `bundesbank` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:bundesbank, "~> 0.2.1"}
+    {:bundesbank, "~> 0.3.0"}
   ]
 end
 ```
@@ -28,7 +28,7 @@ Get all banks from the collection
 ```elixir
 banks = Bundesbank.all
 Enum.count(banks)
-# 15947
+# 15788
 ```
 
 Filter banks by a given key.
@@ -57,7 +57,7 @@ bank = Bundesbank.filter_by(:code, "20050000")
 banks = Bundesbank.filter_by(:city, "Berlin")
 # [%Bundesbank.Bank{bank_name: "BBk Berlin", bic: "MARKDEF1100", change_code: "U", ...
 Enum.count(banks)
-# 94
+# 101
 ```
 
 ## Contributing
